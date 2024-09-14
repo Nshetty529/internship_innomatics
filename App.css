@@ -1,0 +1,16 @@
+/* src/App.css */
+.App {
+  text-align: center;
+  padding: 20px;
+  background-color: rgb(254, 237, 234);
+}
+
+h1 {
+  font-size: 3rem;
+  background-color:white;
+  border: none;
+  border-radius: 90px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+ 
+  margin-bottom: 20px;
+}

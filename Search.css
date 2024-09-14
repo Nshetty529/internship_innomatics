@@ -1,0 +1,120 @@
+
+.search-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: url('https://example.com/background.jpg') no-repeat center center fixed; /* Replace with your background image */
+  background-size: cover;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+
+.search-input-container {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  margin-bottom: 20px;
+}
+
+
+input[type="text"] {
+  width: 100%;
+  max-width: 500px;
+  padding: 15px;
+  border: none;
+  border-radius: 25px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  font-size: 16px;
+  font-family: 'Arial', sans-serif; 
+  color: #333;
+  background: #fff;
+  transition: all 0.2s ease-in-out;
+}
+
+input[type="text"]::placeholder {
+  color: #888;
+}
+
+
+.clear-button {
+  position: absolute;
+ 
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  color: #3e3d3d;
+  transition: color 0.3s ease-in-out;
+}
+
+.clear-button:hover {
+  color: #333;
+}
+
+.suggestions {
+  width: 100%;
+  max-width: 400px;
+  margin-top: 10px;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.suggestion-item {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 5px;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.suggestion-item:hover {
+  background-color: #cbc3c3;
+  transform: scale(1.15); 
+}
+
+
+.no-results {
+  color: #e74c3c;
+  font-weight: bold;
+  text-align: center;
+  padding: 12px;
+  border: 1px solid #e74c3c;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 5px;
+}
+
+
+@media (max-width: 600px) {
+  .search-container {
+    padding: 10px;
+  }
+
+  input[type="text"] {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .clear-button {
+    font-size: 18px;
+  }
+
+  .suggestion-item {
+    font-size: 14px;
+  }
+
+  .no-results {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
