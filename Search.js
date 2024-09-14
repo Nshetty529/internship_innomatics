@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import './Search.css';
 
@@ -6,12 +7,21 @@ const Search = () => {
   const [results, setResults] = useState([]);
   const [data, setData] = useState([]);
   const [showNoResults, setShowNoResults] = useState(false);
+  const [dateTime, setDateTime] = useState(new Date());
 
   useEffect(() => {
     fetch('/cname.json')
       .then(response => response.json())
       .then(data => setData(data))
       .catch(error => console.error('Error loading the data:', error));
+  }, []);
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setDateTime(new Date());
+    }, 1000);
+
+    return () => clearInterval(intervalId);
   }, []);
 
   const handleChange = (e) => {
@@ -46,8 +56,16 @@ const Search = () => {
     setShowNoResults(false);
   };
 
+  const options = { 
+    weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', 
+    hour: '2-digit', minute: '2-digit', second: '2-digit'
+  };
+
   return (
     <div className="search-container">
+      <div className="date-time-display">
+        <p>{dateTime.toLocaleDateString(undefined, options)}</p>
+      </div>
       <div className="search-input-container">
         <input
           type="text"
